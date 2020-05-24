@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SMRGScrollModelStoreContainer" CdmEntityContainer="SMRGScrollEntities">
+    <EntitySetMapping Name="Chat">
+      <EntityTypeMapping TypeName="SMRGScrollModel.Chat">
+        <MappingFragment StoreEntitySet="Chat">
+          <ScalarProperty Name="ID_Chat" ColumnName="ID_Chat" />
+          <ScalarProperty Name="Usuario1" ColumnName="Usuario1" />
+          <ScalarProperty Name="Usuario2" ColumnName="Usuario2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emoji">
+      <EntityTypeMapping TypeName="SMRGScrollModel.Emoji">
+        <MappingFragment StoreEntitySet="Emoji">
+          <ScalarProperty Name="ID_Emoji" ColumnName="ID_Emoji" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="emoji1" ColumnName="emoji" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grupo">
+      <EntityTypeMapping TypeName="SMRGScrollModel.Grupo">
+        <MappingFragment StoreEntitySet="Grupo">
+          <ScalarProperty Name="ID_Grupo" ColumnName="ID_Grupo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IntegranteDeGrupo">
+      <EntityTypeMapping TypeName="SMRGScrollModel.IntegranteDeGrupo">
+        <MappingFragment StoreEntitySet="IntegranteDeGrupo">
+          <ScalarProperty Name="ID_Grupo" ColumnName="ID_Grupo" />
+          <ScalarProperty Name="ID_Integrante" ColumnName="ID_Integrante" />
+          <ScalarProperty Name="esAdmin" ColumnName="esAdmin" />
+          <ScalarProperty Name="ID_Grupo_Integrante" ColumnName="ID_Grupo_Integrante" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mensaje">
+      <EntityTypeMapping TypeName="SMRGScrollModel.Mensaje">
+        <MappingFragment StoreEntitySet="Mensaje">
+          <ScalarProperty Name="ID_Mensaje" ColumnName="ID_Mensaje" />
+          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+          <ScalarProperty Name="mensaje1" ColumnName="mensaje" />
+          <ScalarProperty Name="fechaEnvio" ColumnName="fechaEnvio" />
+          <ScalarProperty Name="ID_Grupo" ColumnName="ID_Grupo" />
+          <ScalarProperty Name="ID_Chat" ColumnName="ID_Chat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SolicitudDeAmistad">
+      <EntityTypeMapping TypeName="SMRGScrollModel.SolicitudDeAmistad">
+        <MappingFragment StoreEntitySet="SolicitudDeAmistad">
+          <ScalarProperty Name="ID_Solicitud" ColumnName="ID_Solicitud" />
+          <ScalarProperty Name="uEmisor" ColumnName="uEmisor" />
+          <ScalarProperty Name="uReceptor" ColumnName="uReceptor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="SMRGScrollModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="nickName" ColumnName="nickName" />
+          <ScalarProperty Name="estadoTexto" ColumnName="estadoTexto" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="numeroAmigo" ColumnName="numeroAmigo" />
+          <ScalarProperty Name="imagenAvatar" ColumnName="imagenAvatar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

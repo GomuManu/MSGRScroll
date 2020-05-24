@@ -1,0 +1,10 @@
+﻿
+.miPerfil {
+    width: 50%;
+    margin: 100px auto;
+    border: 5px solid #6DF7F9;
+    box-shadow: whitesmoke 5px 5px;
+    padding-bottom: 20px;
+    background-color: #3CC9F8;
+    text-align: center;
+}

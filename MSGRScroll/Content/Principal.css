@@ -1,0 +1,61 @@
+﻿body {
+    font-family: Consolas;
+    font-size: 25px;
+    color: whitesmoke;
+}
+
+html {
+    background-image: url(../images/wscroll.png);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+}
+
+.contenedor {
+    width: 96%;
+    margin: 100px auto;
+    border: 5px solid #6DF7F9;
+    box-shadow: whitesmoke 5px 5px;
+    padding-bottom: 20px;
+    background-color: #3CC9F8;
+    text-align: center;
+    height: 232px;
+}
+
+.headerContenedor {
+    width: 90%;
+    height 30%;
+    margin: 23px auto 100px auto;
+    border: 5px solid #6DF7F9;
+    box-shadow: whitesmoke 5px 5px;
+    padding-bottom: 20px;
+    background-color: #3CC9F8;
+    text-align: center;
+    height: 61px;
+}
+
+#imgUsuario{
+    width: 30%
+}
+
+/*-------------------------------------------------------*/
+

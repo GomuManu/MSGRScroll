@@ -1,0 +1,51 @@
+﻿body {
+    font-family: Consolas;
+    font-size: 25px;
+    color: whitesmoke;
+}
+
+html {
+    background-image: url(../images/wscroll.png);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+#formLogin {
+    width: 50%;
+    margin: 100px auto;
+    border: 5px solid #6DF7F9;
+    box-shadow: whitesmoke 5px 5px;
+    padding-bottom: 20px;
+    background-color: #3CC9F8;
+    text-align: center;
+}
+
+#formGeneral {
+    width: 50%;
+    margin: 100px auto;
+    border: 5px solid #6DF7F9;
+    box-shadow: whitesmoke 5px 5px;
+    padding-bottom: 20px;
+    background-color: #3CC9F8;
+    text-align: center;
+}
+
+#logo {
+    content: url('/images/icono.png');
+    width: 15%;
+    margin: auto;
+    padding: 20px;
+    position: center;
+}
+#btnEditar,
+#btnIngresar {
+    padding: 20px;
+    margin: auto;
+    position: center;
+}
+
+table {
+    margin: auto;
+}

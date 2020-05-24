@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f6f327b5c2c84b2194a147e042392368" Name="Diagram1">
+        <EntityTypeShape EntityType="SMRGScrollModel.Chat" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMRGScrollModel.Emoji" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMRGScrollModel.Grupo" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMRGScrollModel.IntegranteDeGrupo" Width="1.5" PointX="6" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMRGScrollModel.Mensaje" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMRGScrollModel.SolicitudDeAmistad" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMRGScrollModel.Usuario" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="SMRGScrollModel.FK_Chat_Usuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="SMRGScrollModel.FK_Chat_Usuario2" ManuallyRouted="false" />
+        <AssociationConnector Association="SMRGScrollModel.FK_Mensaje_Chat" ManuallyRouted="false" />
+        <AssociationConnector Association="SMRGScrollModel.FK_IntegranteDeGrupo_Grupo" ManuallyRouted="false" />
+        <AssociationConnector Association="SMRGScrollModel.FK_Mensaje_Grupo" ManuallyRouted="false" />
+        <AssociationConnector Association="SMRGScrollModel.FK_IntegranteDeGrupo_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="SMRGScrollModel.FK_Mensaje_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="SMRGScrollModel.FK_SolicitudDeAmistad_UsuarioE" ManuallyRouted="false" />
+        <AssociationConnector Association="SMRGScrollModel.FK_SolicitudDeAmistad_UsuarioR" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

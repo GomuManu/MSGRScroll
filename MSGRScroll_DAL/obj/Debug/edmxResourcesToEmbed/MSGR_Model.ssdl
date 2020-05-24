@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SMRGScrollModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Chat">
+    <Key>
+      <PropertyRef Name="ID_Chat" />
+    </Key>
+    <Property Name="ID_Chat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usuario1" Type="int" Nullable="false" />
+    <Property Name="Usuario2" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Emoji">
+    <Key>
+      <PropertyRef Name="ID_Emoji" />
+    </Key>
+    <Property Name="ID_Emoji" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="emoji" Type="image" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Grupo">
+    <Key>
+      <PropertyRef Name="ID_Grupo" />
+    </Key>
+    <Property Name="ID_Grupo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IntegranteDeGrupo">
+    <Key>
+      <PropertyRef Name="ID_Grupo_Integrante" />
+    </Key>
+    <Property Name="ID_Grupo" Type="int" Nullable="false" />
+    <Property Name="ID_Integrante" Type="int" Nullable="false" />
+    <Property Name="esAdmin" Type="bit" Nullable="false" />
+    <Property Name="ID_Grupo_Integrante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mensaje">
+    <Key>
+      <PropertyRef Name="ID_Mensaje" />
+    </Key>
+    <Property Name="ID_Mensaje" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Usuario" Type="int" Nullable="false" />
+    <Property Name="mensaje" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="fechaEnvio" Type="date" Nullable="false" />
+    <Property Name="ID_Grupo" Type="int" />
+    <Property Name="ID_Chat" Type="int" />
+  </EntityType>
+  <EntityType Name="SolicitudDeAmistad">
+    <Key>
+      <PropertyRef Name="ID_Solicitud" />
+    </Key>
+    <Property Name="ID_Solicitud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uEmisor" Type="int" Nullable="false" />
+    <Property Name="uReceptor" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="ID_Usuario" />
+    </Key>
+    <Property Name="ID_Usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="nickName" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="estadoTexto" Type="varchar" MaxLength="50" />
+    <Property Name="estado" Type="int" />
+    <Property Name="numeroAmigo" Type="varchar" MaxLength="7" />
+    <Property Name="imagenAvatar" Type="image" />
+  </EntityType>
+  <Association Name="FK_Chat_Usuario1">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Chat" Type="Self.Chat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="ID_Usuario" />
+      </Principal>
+      <Dependent Role="Chat">
+        <PropertyRef Name="Usuario1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Chat_Usuario2">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Chat" Type="Self.Chat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="ID_Usuario" />
+      </Principal>
+      <Dependent Role="Chat">
+        <PropertyRef Name="Usuario2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IntegranteDeGrupo_Grupo">
+    <End Role="Grupo" Type="Self.Grupo" Multiplicity="1" />
+    <End Role="IntegranteDeGrupo" Type="Self.IntegranteDeGrupo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grupo">
+        <PropertyRef Name="ID_Grupo" />
+      </Principal>
+      <Dependent Role="IntegranteDeGrupo">
+        <PropertyRef Name="ID_Grupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IntegranteDeGrupo_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="IntegranteDeGrupo" Type="Self.IntegranteDeGrupo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="ID_Usuario" />
+      </Principal>
+      <Dependent Role="IntegranteDeGrupo">
+        <PropertyRef Name="ID_Integrante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mensaje_Chat">
+    <End Role="Chat" Type="Self.Chat" Multiplicity="0..1" />
+    <End Role="Mensaje" Type="Self.Mensaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chat">
+        <PropertyRef Name="ID_Chat" />
+      </Principal>
+      <Dependent Role="Mensaje">
+        <PropertyRef Name="ID_Chat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mensaje_Grupo">
+    <End Role="Grupo" Type="Self.Grupo" Multiplicity="0..1" />
+    <End Role="Mensaje" Type="Self.Mensaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grupo">
+        <PropertyRef Name="ID_Grupo" />
+      </Principal>
+      <Dependent Role="Mensaje">
+        <PropertyRef Name="ID_Grupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mensaje_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Mensaje" Type="Self.Mensaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="ID_Usuario" />
+      </Principal>
+      <Dependent Role="Mensaje">
+        <PropertyRef Name="ID_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SolicitudDeAmistad_UsuarioE">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="SolicitudDeAmistad" Type="Self.SolicitudDeAmistad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="ID_Usuario" />
+      </Principal>
+      <Dependent Role="SolicitudDeAmistad">
+        <PropertyRef Name="uEmisor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SolicitudDeAmistad_UsuarioR">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="SolicitudDeAmistad" Type="Self.SolicitudDeAmistad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="ID_Usuario" />
+      </Principal>
+      <Dependent Role="SolicitudDeAmistad">
+        <PropertyRef Name="uReceptor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SMRGScrollModelStoreContainer">
+    <EntitySet Name="Chat" EntityType="Self.Chat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Emoji" EntityType="Self.Emoji" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Grupo" EntityType="Self.Grupo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IntegranteDeGrupo" EntityType="Self.IntegranteDeGrupo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mensaje" EntityType="Self.Mensaje" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SolicitudDeAmistad" EntityType="Self.SolicitudDeAmistad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Chat_Usuario1" Association="Self.FK_Chat_Usuario1">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Chat" EntitySet="Chat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Chat_Usuario2" Association="Self.FK_Chat_Usuario2">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Chat" EntitySet="Chat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IntegranteDeGrupo_Grupo" Association="Self.FK_IntegranteDeGrupo_Grupo">
+      <End Role="Grupo" EntitySet="Grupo" />
+      <End Role="IntegranteDeGrupo" EntitySet="IntegranteDeGrupo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IntegranteDeGrupo_Usuario" Association="Self.FK_IntegranteDeGrupo_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="IntegranteDeGrupo" EntitySet="IntegranteDeGrupo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mensaje_Chat" Association="Self.FK_Mensaje_Chat">
+      <End Role="Chat" EntitySet="Chat" />
+      <End Role="Mensaje" EntitySet="Mensaje" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mensaje_Grupo" Association="Self.FK_Mensaje_Grupo">
+      <End Role="Grupo" EntitySet="Grupo" />
+      <End Role="Mensaje" EntitySet="Mensaje" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mensaje_Usuario" Association="Self.FK_Mensaje_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Mensaje" EntitySet="Mensaje" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SolicitudDeAmistad_UsuarioE" Association="Self.FK_SolicitudDeAmistad_UsuarioE">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="SolicitudDeAmistad" EntitySet="SolicitudDeAmistad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SolicitudDeAmistad_UsuarioR" Association="Self.FK_SolicitudDeAmistad_UsuarioR">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="SolicitudDeAmistad" EntitySet="SolicitudDeAmistad" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

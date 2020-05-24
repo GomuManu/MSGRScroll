@@ -1,0 +1,9 @@
+C:\Users\kirby\Documents\Visual Studio 2019\FCFM\MSGRScroll\MSGRScroll_DAL\bin\Debug\MSGRScroll_DAL.dll.config
+C:\Users\kirby\Documents\Visual Studio 2019\FCFM\MSGRScroll\MSGRScroll_DAL\bin\Debug\MSGRScroll_DAL.dll
+C:\Users\kirby\Documents\Visual Studio 2019\FCFM\MSGRScroll\MSGRScroll_DAL\bin\Debug\MSGRScroll_DAL.pdb
+C:\Users\kirby\Documents\Visual Studio 2019\FCFM\MSGRScroll\MSGRScroll_DAL\bin\Debug\EntityFramework.dll
+C:\Users\kirby\Documents\Visual Studio 2019\FCFM\MSGRScroll\MSGRScroll_DAL\bin\Debug\EntityFramework.xml
+C:\Users\kirby\Documents\Visual Studio 2019\FCFM\MSGRScroll\MSGRScroll_DAL\obj\Debug\MSGRScroll_DAL.csprojAssemblyReference.cache
+C:\Users\kirby\Documents\Visual Studio 2019\FCFM\MSGRScroll\MSGRScroll_DAL\obj\Debug\MSGRScroll_DAL.csproj.CopyComplete
+C:\Users\kirby\Documents\Visual Studio 2019\FCFM\MSGRScroll\MSGRScroll_DAL\obj\Debug\MSGRScroll_DAL.dll
+C:\Users\kirby\Documents\Visual Studio 2019\FCFM\MSGRScroll\MSGRScroll_DAL\obj\Debug\MSGRScroll_DAL.pdb
